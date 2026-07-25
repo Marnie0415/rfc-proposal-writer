@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "rfc-proposal-writer",
+  "description": "Generate RFCs, ADRs, and technical proposals from rough ideas with structured templates.",
+  "author": {
+    "name": "Marnie0415",
+    "url": "https://github.com/Marnie0415"
+  },
+  "homepage": "https://github.com/Marnie0415/rfc-proposal-writer",
+  "repository": "https://github.com/Marnie0415/rfc-proposal-writer",
+  "license": "MIT",
+  "keywords": ["rfc", "adr", "proposal", "design-doc", "agent-skill"],
+  "skills": ".",
+  "version": "1.1.0"
+}
