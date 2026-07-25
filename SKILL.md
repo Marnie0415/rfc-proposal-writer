@@ -2,7 +2,7 @@
 slug: rfc-proposal-writer
 name: rfc-proposal-writer
 displayName: RFC / Proposal Writer
-version: 1.1.0
+version: 1.2.0
 summary: 从粗略想法生成RFC、ADR和技术提案
 description: "Use when the user wants to write an RFC, ADR, or proposal. Triggers on 'write RFC', 'create ADR', 'draft proposal'."
 license: MIT
@@ -10,39 +10,37 @@ license: MIT
 
 # RFC / Proposal Writer
 
-Generates structured RFCs, ADRs, and project proposals from rough ideas.
+Generates structured RFCs, ADRs, and proposals from rough ideas.
 
 ## When to use
 
-- Write an RFC for a new feature
-- Create an Architecture Decision Record
-- Draft a project proposal
+- Write RFC for new feature
+- Create Architecture Decision Record
+- Draft project proposal
 
 ## When NOT to use
 
 - Writing code
-- Creating project tickets
+- Project tickets
 - Meeting minutes
 
-## Workflow
+## Workflow (follow these exact steps)
 
 ### Step 1: Understand the request
 
-Use `read` tool if the user provides a file:
+Read user's input or file:
 
 ```
 read <file_path>
 ```
 
-Or work with the problem description they paste.
-
 ### Step 2: Determine document type
 
-- **RFC**: Proposing new features or system changes
-- **ADR**: Documenting a specific technical decision
-- **Proposal**: Project proposal with success criteria
+- **RFC**: Proposing features/system changes
+- **ADR**: Documenting a specific decision
+- **Proposal**: Project with success criteria
 
-### Step 3: If code context is needed
+### Step 3: Gather code context (if needed)
 
 Use `grep` to understand the codebase:
 
@@ -53,64 +51,23 @@ grep <pattern> <directory>
 Use `glob` to find relevant files:
 
 ```
-glob **/<relevant_pattern>*
+glob **/<pattern>*
 ```
 
-This helps fill in real project context instead of generic templates.
+### Step 4: Generate document
 
-### Step 4: Generate the document
+Follow the appropriate template (RFC/ADR/Proposal).
 
-Follow the appropriate template:
+### Step 5: Save
 
-**RFC structure:**
-```markdown
-## Summary
-One paragraph.
-
-## Motivation
-Why this needs to exist.
-
-## Detailed Design
-How it works (APIs, data flows, components).
-
-## Tradeoffs
-Alternatives considered and why this was chosen.
-
-## Implementation Plan
-Phases, timeline, dependencies.
-
-## Security Considerations
-Risks and mitigations.
-
-## Open Questions
-What's still undecided.
 ```
-
-**ADR structure:**
-```markdown
-## Title: ADR-NNNN: [Decision]
-## Status: Proposed | Accepted
-## Context: What's the problem
-## Decision: What we're doing
-## Consequences: What becomes easier/harder
-```
-
-### Step 5: Save the document
-
-```bash
 write rfc-proposal.md <document_content>
 ```
 
+Tell user: "Document saved to rfc-proposal.md"
+
 ## Error handling
 
-- **Input too vague**: Ask one clarifying question about the core problem
+- **Input too vague**: Ask one clarifying question
 - **Ambiguous type**: Ask RFC or ADR
-- **Multiple decisions**: Ask user to pick one, or create separate docs
-- **No code context**: Use generic templates, flag assumptions with `[ASSUMPTION: ...]`
-
-## Known limitations
-
-- Cannot access external documentation or APIs
-- Tradeoff analysis is general knowledge, not project-specific
-- Does not track document versions or revisions
-- Not a substitute for team review and discussion
+- **No code context**: Use generic templates, flag assumptions
