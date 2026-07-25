@@ -1,0 +1,4 @@
+interface:
+  display_name: "RFC / Proposal Writer"
+  short_description: "Generate RFCs, ADRs, and technical proposals"
+  default_prompt: "Write an RFC for my new feature idea"
