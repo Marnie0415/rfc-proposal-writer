@@ -15,16 +15,55 @@ Takes a rough idea or problem description and produces a structured RFC, Archite
 
 Writing good RFCs and proposals takes practice. Most engineers struggle with structure, tradeoff analysis, and what to include. This skill provides the exact framework used by top tech companies — every document follows the standard format with all required sections.
 
-## Quick start
+## Prerequisites
 
-```text
-# In Claude Code or Codex
-Use the rfc-proposal-writer skill
-```
+- Claude Code, Codex, or any LLM agent that supports SKILL.md
+- Git (to clone the repository)
+- No Python, Node.js, or other runtime required
+
+## Installation
+
+### Step 1: Clone the repository
 
 ```bash
-cp -r rfc-proposal-writer ~/.claude/skills/
+git clone https://github.com/Marnie0415/rfc-proposal-writer.git
 ```
+
+### Step 2: Copy to your skills directory
+
+**macOS / Linux:**
+
+```bash
+# For Claude Code
+cp -r rfc-proposal-writer ~/.claude/skills/
+
+# For Codex
+cp -r rfc-proposal-writer ~/.codex/skills/
+```
+
+**Windows (PowerShell):**
+
+```powershell
+# For Claude Code
+Copy-Item -Path "rfc-proposal-writer" -Destination "$env:USERPROFILE\.claude\skills\rfc-proposal-writer" -Recurse
+
+# For Codex
+Copy-Item -Path "rfc-proposal-writer" -Destination "$env:USERPROFILE\.codex\skills\rfc-proposal-writer" -Recurse
+```
+
+### Step 3: Restart your agent
+
+Restart Claude Code or Codex to pick up the new skill.
+
+## Usage
+
+In Claude Code or Codex, simply ask:
+
+```text
+Write an RFC for my caching proposal
+```
+
+The agent will automatically detect and use this skill.
 
 ## Three document types
 

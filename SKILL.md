@@ -1,7 +1,11 @@
 ---
+slug: rfc-proposal-writer
 name: rfc-proposal-writer
-version: "1.0.0"
+displayName: RFC / Proposal Writer
+version: 1.0.0
+summary: 从粗略想法生成RFC、ADR和技术提案
 description: "Use when the user wants to write an RFC, create a design doc, draft a proposal, make an ADR, or document a technical decision. Triggers on 'write an RFC', 'create a design doc', 'draft a proposal', 'make an ADR', 'help me decide between', or when the user needs structured technical documentation."
+license: MIT
 ---
 
 # RFC / Proposal Writer
